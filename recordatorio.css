@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-section {
+  width: 100%;
+  max-width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+  margin: 0 auto;
+  padding: 15px; /* Reducimos un poco el padding */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5rem; /* Tamaño ligeramente menor */
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="tel"] {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .form-section {
+    padding: 10px;
+    max-width: 100%; /* Usar todo el ancho disponible para pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 1.3rem; /* Reducido en móviles */
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  a {
+    font-size: 0.9rem;
+  }
+}
+

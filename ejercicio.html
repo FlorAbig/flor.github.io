@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Tareas</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Form Section -->
+  <section class="form-section" id="form-section">
+    <h1>Agregar Rutinas y Recordatorios</h1>
+    <form id="task-form">
+        <label for="completed-tasks">Tipo de Ejercicio:</label>
+        <select id="completed-tasks" name="completed-tasks" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="tarea1">Cardio</option>
+          <option value="tarea2">Fuertes</option>
+        </select>
+
+        <label for="completed-tasks">Ejercicios a realizar:</label>
+        <select id="completed-tasks" name="completed-tasks" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="tarea1">Caminar</option>
+          <option value="tarea2">Nadar</option>
+          <option value="tarea3">Bailar</option>
+          <option value="tarea4">Correr</option>
+          <option value="tarea5">Ciclismo</option>
+        </select>
+
+        <label for="completed-tasks">Ejercicios adicionales a realizar:</label>
+        <select id="completed-tasks" name="completed-tasks" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="tarea1">Yoga</option>
+          <option value="tarea2">Gimnasia</option>
+          <option value="tarea3">Pesas</option>
+        </select>
+
+      <label for="assigned-tasks">Tipo de ejercicio:</label>
+      <input type="text" id="assigned-tasks" name="assigned-tasks" required>
+
+      <label for="assigned-tasks">Tiempo de inicio:</label>
+      <input type="text" id="assigned-tasks" name="assigned-tasks" required>
+
+      <label for="assigned-tasks">Tiempo de finalización:</label>
+      <input type="text" id="assigned-tasks" name="assigned-tasks" required>
+
+      <label for="assigned-tasks">¿Requiere supervisión de un experto?</label>
+      <input type="text" id="assigned-tasks" name="assigned-tasks" required>
+
+      <!-- Botones de Agregar, Guardar y Regresar -->
+      <div class="button-group">
+        <button type="submit">Agregar</button>
+        <button type="button" onclick="saveData()">Guardar</button>
+        <a href="tarjetas.html">
+          <button type="button">Regresar </button>
+        </a>
+      </div>
+    </form>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Referencias a los elementos
+    const taskForm = document.getElementById('task-form');
+    const assignedTasksInput = document.getElementById('assigned-tasks');
+
+    // Evento para agregar tareas asignadas
+    taskForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevenir el envío del formulario
+
+      const taskValue = assignedTasksInput.value; // Obtener el valor de la tarea asignada
+
+      // Limpiar el campo de texto de la tarea asignada
+      assignedTasksInput.value = '';
+      alert('Tarea agregada correctamente');
+    });
+
+    // Función para guardar los datos
+    function saveData() {
+      alert('Los datos han sido guardados correctamente.');
+      // Aquí puedes añadir la lógica para guardar los datos en una base de datos o localStorage
+    }
+  </script>
+</body>
+</html>

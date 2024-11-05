@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Control Semanal - Iniciar Sesión</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #85b5e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .auth-section {
+      width: 100%;
+      max-width: 400px;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .form-container h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .form-container label {
+      display: block;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-container input:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+    }
+
+    .auth-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .form-container a {
+      color: #4CAF50;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .form-container a:hover {
+      color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <section class="auth-section">
+    <div id="login-form" class="form-container">
+      <h2>Iniciar Sesión en Control de Rutinas Diarias</h2>
+      <form id="login
+      " action="tarjetas.html" method="GET">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" name="email" required>
+        <label for="login-password">Contraseña:</label>
+        <input type="password" id="login-password" name="password" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <p>¿No tienes cuenta en nuestra app de control de rutinas diarias? <a href="#" onclick="toggleForm()">Regístrate aquí</a></p>
+    </div>
+
+    <div id="register-form" class="form-container" style="display: none;">
+      <h2>Registro</h2>
+      <form id="register" action="tarjetas.html" method="GET">
+        <label for="register-name">Nombre:</label>
+        <input type="text" id="register-name" name="name" required>
+        <label for="register-email">Email:</label>
+        <input type="email" id="register-email" name="email" required>
+        <label for="register-password">Contraseña:</label>
+        <input type="password" id="register-password" name="password" required>
+        <button type="submit">Registrarse</button>
+      </form>
+      <p>¿Ya tienes cuenta? <a href="#" onclick="toggleForm()">Inicia sesión aquí</a></p>
+    </div>
+  </section>
+
+  <script>
+    function toggleForm() {
+      const loginForm = document.getElementById('login-form');
+      const registerForm = document.getElementById('register-form');
+      loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
+      registerForm.style.display = registerForm.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

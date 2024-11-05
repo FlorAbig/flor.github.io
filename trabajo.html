@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Tareas</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Form Section -->
+  <section class="form-section" id="form-section">
+    <h1>Agregar Rutinas y Recordatorios</h1>
+
+    <!-- Primer apartado -->
+    <form id="task-form">
+      <label for="company">Empresa en la que trabajas:</label>
+      <input type="text" id="company" name="company" required>
+
+      <label for="date">Horario de trabajo:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="assigned-tasks">Trabajos asignados:</label>
+      <input type="text" id="assigned-tasks" name="assigned-tasks" required>
+
+      <!-- Botones para agregar y guardar en el primer apartado -->
+      <button type="submit">Agregar</button>
+      <button type="button" onclick="saveData()">Guardar</button>
+    </form>
+
+    <!-- Separación entre los dos apartados -->
+    <hr>
+
+    <!-- Segundo apartado con los combobox -->
+    <form id="tasks-status-form">
+      <label for="pending-tasks">Trabajos pendientes:</label>
+      <select id="pending-tasks" name="pending-tasks" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+      </select>
+
+      <label for="completed-tasks">Trabajos realizados:</label>
+      <select id="completed-tasks" name="completed-tasks" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+      </select>
+
+      <!-- Botones para agregar y guardar en el segundo apartado -->
+      <button type="button" onclick="addPendingTask()">Agregar</button>
+      <button type="button" onclick="saveTasksStatus()">Guardar</button>
+    </form>
+
+    <!-- Botón para regresar a tarjetas.html -->
+    <a href="tarjetas.html">
+      <button type="button">Regresar</button>
+    </a>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Referencias a los elementos del primer apartado
+    const taskForm = document.getElementById('task-form');
+    const assignedTasksInput = document.getElementById('assigned-tasks');
+    
+    // Referencias a los elementos del segundo apartado
+    const pendingTasksSelect = document.getElementById('pending-tasks');
+    const completedTasksSelect = document.getElementById('completed-tasks');
+
+    // Evento para agregar tareas asignadas al primer apartado
+    taskForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevenir el envío del formulario
+
+      const taskValue = assignedTasksInput.value; // Obtener el valor de la tarea asignada
+
+      // Crear una nueva opción para "Trabajos pendientes" y "Trabajos realizados"
+      const newOptionPending = document.createElement('option');
+      const newOptionCompleted = document.createElement('option');
+
+      newOptionPending.value = taskValue;
+      newOptionPending.textContent = taskValue;
+
+      newOptionCompleted.value = taskValue;
+      newOptionCompleted.textContent = taskValue;
+
+      // Agregar la nueva opción a ambos selects
+      pendingTasksSelect.appendChild(newOptionPending);
+      completedTasksSelect.appendChild(newOptionCompleted);
+
+      // Limpiar el campo de texto de la tarea asignada
+      assignedTasksInput.value = '';
+    });
+
+    // Función para guardar los datos del primer apartado
+    function saveData() {
+      alert('Los datos del primer apartado se han guardado correctamente.');
+      // Aquí puedes añadir la lógica para guardar los datos en una base de datos o localStorage
+    }
+
+    // Función para agregar una tarea pendiente (segundo apartado)
+    function addPendingTask() {
+      const newTask = prompt('Ingresa una nueva tarea pendiente:');
+      if (newTask) {
+        const newOption = document.createElement('option');
+        newOption.value = newTask;
+        newOption.textContent = newTask;
+        pendingTasksSelect.appendChild(newOption);
+      }
+    }
+
+    // Función para guardar el estado de los trabajos en el segundo apartado
+    function saveTasksStatus() {
+      alert('Los trabajos pendientes y realizados se han guardado correctamente.');
+      // Aquí puedes añadir la lógica para guardar los datos en una base de datos o localStorage
+    }
+  </script>
+</body>
+</html>
+
